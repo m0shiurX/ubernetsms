@@ -59,6 +59,14 @@ function ubernet_sms_settings_init(  ) {
 		'ubernet_sms_pluginPage_api_section'
 	);
 
+	add_settings_field(
+		'ubernet_sms_admin_no',
+		__( 'Admin Phone no:', 'ubernet-sms' ),
+		'ubernet_sms_admin_no_render',
+		'pluginPage',
+		'ubernet_sms_pluginPage_section'
+	);
+
 	add_settings_section(
 		'ubernet_sms_pluginPage_section',
 		__( 'SMS TEMPLATES', 'ubernet-sms' ),
@@ -76,16 +84,8 @@ function ubernet_sms_settings_init(  ) {
 
 	add_settings_field(
 		'ubernet_sms_template_order_placed',
-		__( 'SMS Template:', 'ubernet-sms' ),
+		__( 'Customer SMS Template:', 'ubernet-sms' ),
 		'ubernet_sms_template_order_placed_render',
-		'pluginPage',
-		'ubernet_sms_pluginPage_section'
-	);
-	// section for admin phone no and admin msg for new order
-	add_settings_field(
-		'ubernet_sms_admin_no',
-		__( 'Admin Phone no:', 'ubernet-sms' ),
-		'ubernet_sms_admin_no_render',
 		'pluginPage',
 		'ubernet_sms_pluginPage_section'
 	);
@@ -200,7 +200,7 @@ function ubernet_sms_admin_no_render(  ) {
 	$options = get_option( 'ubernet_sms_settings' );
 	?>
 	<input type='text' name='ubernet_sms_settings[ubernet_sms_admin_no]' value='<?php echo $options['ubernet_sms_admin_no']; ?>'>
-  	<p><i>Admin no for getting new ordere notifications.</i></p>
+  	<p><i>Admin phone no for getting specific notifications.</i></p>
 	<?php
 }
 
@@ -289,7 +289,7 @@ function ubernet_sms_options_page(  ) {
 				</div>
 				<div class="ubernet_sms_settings_page_footer">
 					<h4><strong><?php echo __("Please Note:</strong> This is a third-party plugin.<br>This plugin is not developed or managed by SMS providers.");?></h4>
-					<!-- <p>Developed by: <a href="https://solaymanhaider.com" target="_blank"><?php echo __("Solayman Haider");?></a></p> -->
+					<p>Developed by: <a href="https://moshiur.pro" target="_blank"><?php echo __("Moshiur Rahman");?></a></p>
 				</div>
 			</div>
 		</div>
