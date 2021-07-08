@@ -14,3 +14,6 @@ Download a copy (ZIP file) of this plugin from WordPress.org. Unzip the ZIP file
 
 ## License
 [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+
+## Credits
+[Solayman Haider](https://github.com/solaymanhaider/notify-woosms)

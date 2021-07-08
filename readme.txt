@@ -42,3 +42,8 @@ No, this plugin only helps to connect sms service providers API to send sms.
 
 = 1.0 =
 * This is first release.
+
+
+== Credits ==
+Solayman Haider
+Original Repository: https://github.com/solaymanhaider/notify-woosms
