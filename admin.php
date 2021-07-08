@@ -160,7 +160,6 @@ function ubernet_sms_api_key_render(  ) {
 	$options = get_option( 'ubernet_sms_settings' );
 	?>
 	<input type='text' name='ubernet_sms_settings[ubernet_sms_api_key]' value='<?php echo $options['ubernet_sms_api_key']; ?>'>
-  	<p><i>If you use API KEY, You don't have to enter user name and password.</i></p>
 	<?php
 }
 
