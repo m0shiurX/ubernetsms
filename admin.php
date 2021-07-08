@@ -64,7 +64,7 @@ function ubernet_sms_settings_init(  ) {
 		__( 'Admin Phone no:', 'ubernet-sms' ),
 		'ubernet_sms_admin_no_render',
 		'pluginPage',
-		'ubernet_sms_pluginPage_section'
+		'ubernet_sms_pluginPage_api_section'
 	);
 
 	add_settings_section(
