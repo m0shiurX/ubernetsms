@@ -10,7 +10,7 @@ function ubernet_sms_send_sms($customer_phone, $customer_msg, $admin_msg){
     if($admin_nums != "") {
         $admin_nums = explode(",", $admin_nums);
         foreach($admin_nums as $admin_num){
-            $msg = ["to" => $admin_num, "message" => "customer msg"];
+            $msg = ["to" => $admin_num, "message" => $admin_msg];
             array_push($admin_sms_array, $msg);
         }
     }
