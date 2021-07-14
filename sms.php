@@ -5,22 +5,28 @@ function ubernet_sms_send_sms($customer_phone, $customer_msg, $admin_msg){
 	$apikey = $options['ubernet_sms_api_key'];
 	
 	
-	$admin_phone = $options['ubernet_sms_admin_no'];
+	$admin_nums = $options['ubernet_sms_admin_no'];
+	$admin_sms_array = [];
+    if($admin_nums != "") {
+        $admin_nums = explode(",", $admin_nums);
+        foreach($admin_nums as $admin_num){
+            $msg = ["to" => $admin_num, "message" => "customer msg"];
+            array_push($admin_sms_array, $msg);
+        }
+    }
+
 
 	$api_url = "http://www.btssms.com/smsapimany";
 
 	$data = [
 		"api_key" => $apikey,
 		"senderid" => $options['ubernet_sms_api_mask'],
-		"messages" => json_encode( [
-		[
-			"to" => $customer_phone,
-			"message" => $customer_msg
-		],
-		[
-			"to" => $admin_phone,
-			"message" => $admin_msg
-		]
+		"messages" => json_encode([
+			[
+				"to" => $customer_phone,
+				"message" => $customer_msg
+			],
+			...$admin_sms_array
 		])
 	];
 
