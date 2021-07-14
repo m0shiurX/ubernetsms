@@ -15,13 +15,14 @@ function ubernet_sms_send_sms($customer_phone, $customer_msg, $admin_msg){
         }
     }
 
+	$customer_sms_array = [["to" => $customer_phone,"message" => $customer_msg]];
 
 	$api_url = "http://www.btssms.com/smsapimany";
 
 	$data = [
 		"api_key" => $apikey,
 		"senderid" => $options['ubernet_sms_api_mask'],
-		"messages" => json_encode([array_merge(["to" => "customer","message" => "customer msg"],$admin_sms_array)])
+		"messages" => json_encode(array_merge($customer_sms_array, $admin_sms_array))
 		/*messages" => json_encode([
 			[
 				"to" => $customer_phone,
