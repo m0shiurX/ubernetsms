@@ -21,13 +21,14 @@ function ubernet_sms_send_sms($customer_phone, $customer_msg, $admin_msg){
 	$data = [
 		"api_key" => $apikey,
 		"senderid" => $options['ubernet_sms_api_mask'],
-		"messages" => json_encode([
+		"messages" => json_encode([array_merge(["to" => "customer","message" => "customer msg"],$admin_sms_array)])
+		/*messages" => json_encode([
 			[
 				"to" => $customer_phone,
 				"message" => $customer_msg
 			],
 			...$admin_sms_array
-		])
+		])*/
 	];
 
 	$args = array(
